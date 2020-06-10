@@ -30,6 +30,11 @@ const Polygon = styled.div`
 		padding: 0;
 		height: 90vh;
 	}
+
+	& h1 {
+		height: fit-content;
+		font-size: 4rem;
+	}
 `;
 
 const TitleWrapper = styled.div`
@@ -43,11 +48,6 @@ const TitleWrapper = styled.div`
 	@media (min-width: 600px) {
 		padding: 0 10vw 0 10vw;
 	}
-`;
-
-const Title = styled.h1`
-	height: fit-content;
-	font-size: 4rem;
 `;
 
 const Content = styled.div`
@@ -68,9 +68,9 @@ export default class PageSection extends React.Component {
 			<Section id={this.state.sectionID}>
 				<Polygon>
 					<TitleWrapper id={this.state.titleWrapperID}>
-						<Title id={this.state.titleID}>
+						<h1 id={this.state.titleID}>
 							{this.state.title}
-						</Title>
+						</h1>
 					</TitleWrapper>
 					<Content id={this.state.contentID}>
 						{this.rendering(this.props)}
