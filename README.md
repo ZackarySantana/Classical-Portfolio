@@ -8,6 +8,17 @@ The games in this <a href="https://github.com/ZackarySantana/PortfolioGames">rep
 ## Motivation
 I'm really motivated to design and create applications/websites. I love learning new thinks and I pick on stuff fast. I would love for a company to view my repositories and contact me.
 
+## Code style
+<b>One time use Components:</b> Has a folder for implementation (index.js, styles.scss, and reducer.js as needed)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uses SASS for styling
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usually has a HOC to handle layout
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Typically uses class components
+<br>
+<b>Reusable Components:</b> Placed in components folder, imported by one time use components
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uses styled components for styling
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides HOC and various functions to improve efficiency
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exports multiple constants or functions; HOC export a class component
+
 ## Tech/framework used
 <b>Built with</b>
 <ul>

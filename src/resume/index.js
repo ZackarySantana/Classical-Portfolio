@@ -23,14 +23,12 @@ const Shadow = styled.div`
 export default function resume() {
 	return (
 		<Background id="resume-page">
-
 			<Shadow>
 				<Introduction />
 				<Resume />
 				<Projects />
 				<ContactMe />
 			</Shadow>
-
 			<SideNav />
 		</Background>
 	);
