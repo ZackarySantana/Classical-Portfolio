@@ -5,9 +5,18 @@ import React from 'react';
 import Section from '../components/page-section';
 
 export default class ContactMe extends Section {
-	rendering() {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			title: "Contact Me"
+		};
+	}
+
+	rendering(props) {
 		return (
-			<h1>hi</h1>
+			< h1 > hi</h1 >
 		);
 	}
 }

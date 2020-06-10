@@ -5,7 +5,16 @@ import React from 'react';
 import Section from '../components/page-section';
 
 export default class Resume extends Section {
-	rendering() {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			title: "Resume"
+		};
+	}
+
+	rendering(props) {
 		return (
 			<h1>hi</h1>
 		);
