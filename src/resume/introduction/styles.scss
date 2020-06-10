@@ -1,5 +1,26 @@
-#resume-page #introduction {
+#resume-page #introduction-content {
 	display: flex;
+	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
+
+	ul {
+		width: 100%;
+		height: auto;
+		padding: 0;
+
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+
+		list-style: none;
+
+		li {
+			flex-basis: 33.333333%;
+			display: flex;
+			justify-content: center;
+
+			padding-bottom: 4vh;
+		}
+	}
 }
