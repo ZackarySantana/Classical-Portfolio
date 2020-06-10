@@ -8,17 +8,26 @@ import Resume from './resume';
 import Projects from './projects';
 import ContactMe from './contactme';
 
+// Style
+import './styles.scss';
+
 const Background = styled.div`
-  background-color: black;
+  background-color: var(--parent-background);
+`;
+
+const Shadow = styled.div`
+  filter: drop-shadow(0px 0px var(--shadow-radius) var(--shadow-color));
 `;
 
 export default function resume() {
 	return (
 		<Background id="resume-page">
-			<Introduction />
-			<Resume />
-			<Projects />
-			<ContactMe />
+			<Shadow>
+				<Introduction />
+				<Resume />
+				<Projects />
+				<ContactMe />
+			</Shadow>
 		</Background>
 	);
 }
