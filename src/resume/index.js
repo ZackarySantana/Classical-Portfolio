@@ -2,14 +2,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Style
+import './styles.scss';
+
 // Components
 import Introduction from './introduction';
 import Resume from './resume';
 import Projects from './projects';
 import ContactMe from './contactme';
-
-// Style
-import './styles.scss';
 
 const Background = styled.div`
 	background-color: var(--parent-background);

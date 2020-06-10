@@ -65,14 +65,14 @@ const Content = styled.div`
 export default class PageSection extends React.Component {
 	render() {
 		return (
-			<Section>
+			<Section id={this.state.sectionID}>
 				<Polygon>
-					<TitleWrapper>
-						<Title>
+					<TitleWrapper id={this.state.titleWrapperID}>
+						<Title id={this.state.titleID}>
 							{this.state.title}
 						</Title>
 					</TitleWrapper>
-					<Content>
+					<Content id={this.state.contentID}>
 						{this.rendering(this.props)}
 					</Content>
 				</Polygon>
