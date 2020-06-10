@@ -12,11 +12,11 @@ import ContactMe from './contactme';
 import './styles.scss';
 
 const Background = styled.div`
-  background-color: var(--parent-background);
+	background-color: var(--parent-background);
 `;
 
 const Shadow = styled.div`
-  filter: drop-shadow(0px 0px var(--shadow-radius) var(--shadow-color));
+	filter: drop-shadow(0px 0px var(--shadow-radius) var(--shadow-color));
 `;
 
 export default function resume() {

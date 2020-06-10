@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Section = styled.div`
 	height: 100vh;
+    scroll-snap-align: start;
 
 	background-color: var(--background);
 	color: var(--on-background);
