@@ -8,10 +8,6 @@ The games in this <a href="https://github.com/ZackarySantana/PortfolioGames">rep
 ## Motivation
 I'm really motivated to design and create applications/websites. I love learning new thinks and I pick on stuff fast. I would love for a company to view my repositories and contact me.
 
-## Code style
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
 ## Tech/framework used
 <b>Built with</b>
 <ul>
