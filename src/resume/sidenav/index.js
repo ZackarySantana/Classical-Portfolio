@@ -22,24 +22,17 @@ const List = styled.ul`
 	filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.8));
 `;
 
-export default class Resume extends React.Component {
-
-	constructor(props) {
-		super(props);
-	}
-
-	render(props) {
-		return (
-			<List id="sidenav">
-				<li><p onClick={Links.scrollToHome}>Home</p></li>
-				<li><p onClick={Links.scrollToResume}>Resume</p></li>
-				<li><p onClick={Links.scrollToProjects}>Projects</p></li>
-				<li><p onClick={Links.scrollToContactMe}>Contact Me</p></li>
-				<li id="icons">
-					<Github onClick={Links.openGithub} />
-					<LinkedIn onClick={Links.openLinkedIn} />
-				</li>
-			</List>
-		);
-	}
+export default function SideNav() {
+	return (
+		<List id="sidenav">
+			<li><p onClick={Links.scrollToHome}>Home</p></li>
+			<li><p onClick={Links.scrollToResume}>Resume</p></li>
+			<li><p onClick={Links.scrollToProjects}>Projects</p></li>
+			<li><p onClick={Links.scrollToContactMe}>Contact Me</p></li>
+			<li id="icons">
+				<Github onClick={Links.openGithub} />
+				<LinkedIn onClick={Links.openLinkedIn} />
+			</li>
+		</List>
+	);
 }
