@@ -2,7 +2,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+// Styles
+import './styles.scss';
+
+// Components
+import * as Links from '../components/links';
+import { Github, LinkedIn } from '../components/icons';
+
+const List = styled.ul`
 	position: fixed;
 	z-index: 3;
 
@@ -27,11 +34,16 @@ export default class Resume extends React.Component {
 
 	render(props) {
 		return (
-			<Container>
-				<ul>
-
-				</ul>
-			</Container>
+			<List id="sidenav">
+				<li><p onClick={Links.scrollToHome}>Home</p></li>
+				<li><p onClick={Links.scrollToResume}>Resume</p></li>
+				<li><p onClick={Links.scrollToProjects}>Projects</p></li>
+				<li><p onClick={Links.scrollToContactMe}>Contact Me</p></li>
+				<li id="icons">
+					<Github onClick={Links.openGithub} />
+					<LinkedIn onClick={Links.openLinkedIn} />
+				</li>
+			</List>
 		);
 	}
 }

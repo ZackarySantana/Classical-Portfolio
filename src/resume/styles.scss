@@ -7,35 +7,14 @@
 
 	--error: #CF6679;
 	--on-background: #eeeeee;
-	--unactive: #555;
+	--inactive: #555;
 
 	button {
 		font-size: 30px;
 		padding: 16px 10px 16px 10px;
 
-		color: var(--unactive);
-		background-color: inherit;
-		box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.09),
-			3px 3px 3px rgba(0, 0, 0, 0.5);
-		transition: color 1s;
-
 		outline: none;
 		border: none;
-
-		&:not([disabled]):hover {
-			color: var(--on-background);
-		}
-
-		&:active {
-			box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.09) inset,
-				3px 3px 3px rgba(0, 0, 0, 0.5) inset;
-		}
-
-		&[disabled] {
-			cursor: not-allowed;
-			box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.09) inset,
-				3px 3px 3px rgba(0, 0, 0, 0.5) inset;
-		}
 	}
 
 	svg {
@@ -46,8 +25,12 @@
 		min-height: 6.56vh;
 
 		padding: 10px 10px 10px 10px;
+	}
 
-		color: var(--unactive);
+	button,
+	svg {
+		color: var(--inactive);
+		background-color: inherit;
 		border-radius: 15px;
 		box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.09),
 			3px 3px 3px rgba(0, 0, 0, 0.5);
