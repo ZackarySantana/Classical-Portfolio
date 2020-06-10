@@ -21,6 +21,15 @@ const Section = styled.div`
 `;
 
 const Polygon = styled.div`
+	& h1 {
+		height: fit-content;
+		font-size: 4rem;
+	}
+
+	&.noTitle {
+		padding-top: 20vh;
+	}
+
 	@media (min-width: 600px) {
 		padding: 0 20vw 0 20vw;
 		height: 80vh;
@@ -29,11 +38,6 @@ const Polygon = styled.div`
 	@media (max-width: 600px) {
 		padding: 0;
 		height: 90vh;
-	}
-
-	& h1 {
-		height: fit-content;
-		font-size: 4rem;
 	}
 `;
 
@@ -63,16 +67,23 @@ const Content = styled.div`
 `;
 
 export default class PageSection extends React.Component {
+
+	componentDidMount() {
+		this.setState({ idPrefix: this.state.title.replace(/\s+/g, '-').toLowerCase() });
+	}
+
 	render() {
 		return (
-			<Section id={this.state.sectionID}>
-				<Polygon>
-					<TitleWrapper id={this.state.titleWrapperID}>
-						<h1 id={this.state.titleID}>
-							{this.state.title}
-						</h1>
-					</TitleWrapper>
-					<Content id={this.state.contentID}>
+			<Section id={this.state.idPrefix + "-section"}>
+				<Polygon className={!this.state.hideTitle ? "" : "noTitle"}>
+					{!this.state.hideTitle &&
+						<TitleWrapper id={this.state.idPrefix + "-titleWrapper"}>
+							<h1 id={this.state.idPrefix + "-title"}>
+								{this.state.title}
+							</h1>
+						</TitleWrapper>
+					}
+					<Content id={this.state.idPrefix + "-content"}>
 						{this.rendering(this.props)}
 					</Content>
 				</Polygon>
