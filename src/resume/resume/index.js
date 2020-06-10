@@ -1,9 +1,13 @@
 // Libraries
 import React from 'react';
 
-export default function resume() {
-	return (
-		<div className="section">
-		</div>
-	);
+// Components
+import Section from '../components/page-section';
+
+export default class Resume extends Section {
+	rendering() {
+		return (
+			<h1>hi</h1>
+		);
+	}
 }

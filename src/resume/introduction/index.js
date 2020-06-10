@@ -1,9 +1,13 @@
 // Libraries
 import React from 'react';
 
-export default function Introduction() {
-	return (
-		<div className="section">
-		</div>
-	);
+// Components
+import Section from '../components/page-section';
+
+export default class Introduction extends Section {
+	rendering() {
+		return (
+			<h1>hi</h1>
+		);
+	}
 }
