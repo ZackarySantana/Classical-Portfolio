@@ -12,13 +12,15 @@
 	p.link {
 		margin: 0;
 		text-decoration: underline;
-		transition: color 1s;
+		transition: color 1s, text-decoration-color 1s;
+
+		&.active {
+			color: var(--on-background);
+			text-decoration-color: var(--inactive);
+		}
 
 		&:hover {
 			color: var(--on-background);
-		}
-
-		&.active {
 			text-decoration-color: var(--on-background);
 		}
 	}
