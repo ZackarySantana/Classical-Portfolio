@@ -28,8 +28,8 @@ export default class Introduction extends Section {
 					<li><button onClick={Links.scrollToResume}>Resume</button></li>
 					<li><button onClick={Links.scrollToProjects}>Projects</button></li>
 					<li><button onClick={Links.scrollToContactMe}>Contact Me</button></li>
-					<li onClick={Links.openGithub}><Github /></li>
-					<li onClick={Links.openLinkedIn}><LinkedIn /></li>
+					<li><Github onClick={Links.openGithub} /></li>
+					<li><LinkedIn onClick={Links.openLinkedIn} /></li>
 				</ul>
 			</Fragment>
 		);

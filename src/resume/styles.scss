@@ -9,6 +9,20 @@
 	--on-background: #eeeeee;
 	--inactive: #555;
 
+	p.link {
+		margin: 0;
+		text-decoration: underline;
+		transition: color 1s;
+
+		&:hover {
+			color: var(--on-background);
+		}
+
+		&.active {
+			text-decoration-color: var(--on-background);
+		}
+	}
+
 	button {
 		font-size: 30px;
 		padding: 16px 10px 16px 10px;
