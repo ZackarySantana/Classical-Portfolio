@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 // Main component
 import Resume from './resume';
 
-// Removes body margin
+// Default Styles
 import './styles.css';
 
 ReactDOM.render(

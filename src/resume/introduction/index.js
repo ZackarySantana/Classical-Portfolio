@@ -10,7 +10,7 @@ export default class Introduction extends Section {
 		super(props);
 
 		this.state = {
-			title: "Introduction"
+			title: ""
 		};
 	}
 

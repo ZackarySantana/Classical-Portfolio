@@ -1,4 +1,6 @@
 html {
+	font-family: 'Ubuntu', sans-serif;
+
 	scroll-snap-type: y proximity;
 	scroll-behavior: smooth;
 }
@@ -20,4 +22,9 @@ html::-webkit-scrollbar-track {
 
 body {
 	margin: 0;
+}
+
+h1 {
+	font-family: 'Piedra', cursive;
+	letter-spacing: 6px;
 }
