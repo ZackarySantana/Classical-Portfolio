@@ -11,10 +11,11 @@ I'm really motivated to design and create applications/websites. I love learning
 ## Tech/framework used
 <b>Built with</b>
 <ul>
-<li>- Framework: [React] (<a href="https://reactjs.org/">https://reactjs.org/</a>)</li>
-<li>- Dependance: [Redux] (<a href="https://react-redux.js.org/>">https://react-redux.js.org/</a>)</li>
-<li>- Dependance: [PropTypes] (<a href="https://www.npmjs.com/package/prop-types">https://www.npmjs.com/package/prop-types</a>)</li>
-<li>- Dependance: [SASS] (<a href="https://www.npmjs.com/package/sass">https://www.npmjs.com/package/sass</a>)</li>
+<li>- [<a href="https://reactjs.org/">React</a>] - Is the framework of this repo</li>
+<li>- [<a href="https://react-redux.js.org/>">Redux</a>] - Used in required repo inside of the games</li>
+<li>- [<a href="https://www.npmjs.com/package/prop-types">PropTypes</a>] - Used to document expected props for components</li>
+<li>- [<a href="https://www.npmjs.com/package/sass">SASS</a>] - Used for its nesting and better look</li>
+<li>- [<a href="https://styled-components.com/">Styled Components & Babel Plugin Styled Components</a>] - Used for lower file sizes and easier to read styles</li>
 </ul>
 
 ## Note
