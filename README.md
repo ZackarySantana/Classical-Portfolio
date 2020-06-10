@@ -1,14 +1,9 @@
-## Resume
+# Resume
 Resume is my personal portfolio hosted on <a href="https://www.zackaryjamessantana.com">my website</a>
 It also hosts different games and navigates to different websites I have designed and developed.
-<ul>
-<h2>Games:</h2>
-<li><a href="https://snlsystems.net/">Tile Games</a> (A matching based game-hosted on another repository)</li>
-<li><a href="https://snlsystems.net/">Animal Collectors</a> (A cookie-clicker based game-hosted on another repository)</li>
-<h2>Websites:</h2>
-<li><b>This</b> repo</li>
-<li><a href="https://snlsystems.net/">SNL Systems</a></li>
-</ul>
+
+## Games
+The games in this <a href="https://github.com/ZackarySantana/PortfolioGames">repo</a> are designed in to this repo, intended use in the src folder.
 
 ## Motivation
 I'm really motivated to design and create applications/websites. I love learning new thinks and I pick on stuff fast. I would love for a company to view my repositories and contact me.
@@ -20,11 +15,14 @@ I'm really motivated to design and create applications/websites. I love learning
 ## Tech/framework used
 <b>Built with</b>
 <ul>
-<li>- [React] (<a href="https://reactjs.org/">https://reactjs.org/</a>)</li>
-<li>- [Redux] (<a href="https://react-redux.js.org/>">https://react-redux.js.org/</a>)</li>
-<li>- [PropTypes] (<a href="https://www.npmjs.com/package/prop-types">https://www.npmjs.com/package/prop-types</a>)</li>
-<li>- [SASS] (<a href="https://www.npmjs.com/package/sass">https://www.npmjs.com/package/sass</a>)</li>
+<li>- Framework: [React] (<a href="https://reactjs.org/">https://reactjs.org/</a>)</li>
+<li>- Dependance: [Redux] (<a href="https://react-redux.js.org/>">https://react-redux.js.org/</a>)</li>
+<li>- Dependance: [PropTypes] (<a href="https://www.npmjs.com/package/prop-types">https://www.npmjs.com/package/prop-types</a>)</li>
+<li>- Dependance: [SASS] (<a href="https://www.npmjs.com/package/sass">https://www.npmjs.com/package/sass</a>)</li>
 </ul>
 
+## Note
+This repository is made to compile with each game in the repo <a href="https://github.com/ZackarySantana/PortfolioGames">Portfolio Games</a>.
+
 ## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+Use CRA (create-react-app) to build the node_modules. Then install this repo (as the root directory, so the src and public folder have the same parent as node_modules).<br>Add each dependance (see Frameworks)<br>Finally, add the <a href="https://github.com/ZackarySantana/PortfolioGames">repo</a> in to the src/ folder
