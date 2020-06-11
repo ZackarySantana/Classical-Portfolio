@@ -1,8 +1,12 @@
 // Libraries
 import React, { Fragment, Suspense } from 'react';
 
+// Styles
+import './styles.scss';
+
 // Components
 import Section from '../components/page-section';
+import ProjectCard from './project-card';
 
 // Icons
 const Games = React.lazy(() => import('../../resources/images/games'));
@@ -17,12 +21,16 @@ export default class Projects extends Section {
 	rendering() {
 		return (
 			<Fragment>
-				<Suspense fallback={<div>Loading...</div>}>
-					<Games />
-				</Suspense>
-				<Suspense fallback={<div>Loading...</div>}>
-					<Websites />
-				</Suspense>
+				<ProjectCard>
+					<Suspense fallback={<div>Loading...</div>}>
+						<Games />
+					</Suspense>
+				</ProjectCard>
+				<ProjectCard>
+					<Suspense fallback={<div>Loading...</div>}>
+						<Websites />
+					</Suspense>
+				</ProjectCard>
 			</Fragment>
 		);
 	}

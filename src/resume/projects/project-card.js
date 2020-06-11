@@ -5,7 +5,7 @@ function ProjectCard(props) {
 	return (
 		<div className="card" onClick={props.onClick}>
 			<div className="card-img-container">
-				<img src={props.image} alt='project-card' />
+				{props.children}
 			</div>
 			<div className="card-content">
 				<p>{props.name}</p>
