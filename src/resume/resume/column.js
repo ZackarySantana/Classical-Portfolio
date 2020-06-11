@@ -3,7 +3,11 @@ import React from 'react';
 export default function column(props) {
 	return (
 		<div className="column">
-			<h2>{props.title}</h2>
+			<h2>{props.title}
+				{props.description &&
+					<span> {props.description}</span>
+				}
+			</h2>
 			<ul>
 				{props.children}
 			</ul>
