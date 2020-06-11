@@ -12,15 +12,10 @@ import { Github, LinkedIn } from '../components/icons';
 export default class Introduction extends Section {
 
 	constructor(props) {
-		super(props);
-
-		this.state = {
-			title: "introduction",
-			hideTitle: true
-		};
+		super(props, "Introduction", true);
 	}
 
-	rendering(props) {
+	rendering() {
 		return (
 			<Fragment>
 				<h1>Hello, I'm Zackary Santana</h1>

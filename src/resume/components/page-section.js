@@ -63,6 +63,15 @@ const Content = styled.div`
 
 export default class PageSection extends React.Component {
 
+	constructor(props, title, hideTitle = false) {
+		super(props);
+
+		this.state = {
+			title,
+			hideTitle
+		}
+	}
+
 	componentDidMount() {
 		this.setState({ idPrefix: this.state.title.replace(/\s+/g, '-').toLowerCase() });
 	}

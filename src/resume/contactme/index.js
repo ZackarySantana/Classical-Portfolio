@@ -7,16 +7,12 @@ import Section from '../components/page-section';
 export default class ContactMe extends Section {
 
 	constructor(props) {
-		super(props);
-
-		this.state = {
-			title: "Contact Me"
-		};
+		super(props, "Contact Me");
 	}
 
-	rendering(props) {
+	rendering() {
 		return (
-			< h1 > hi</h1 >
+			<h1>hi</h1>
 		);
 	}
 }

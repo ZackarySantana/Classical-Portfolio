@@ -18,7 +18,7 @@ export default class Resume extends Section {
 		};
 	}
 
-	rendering(props) {
+	rendering() {
 		return (
 			<Fragment>
 				<Column title="Education">

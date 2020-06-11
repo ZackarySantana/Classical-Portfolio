@@ -7,14 +7,10 @@ import Section from '../components/page-section';
 export default class Projects extends Section {
 
 	constructor(props) {
-		super(props);
-
-		this.state = {
-			title: "Projects"
-		};
+		super(props, "Projects");
 	}
 
-	rendering(props) {
+	rendering() {
 		return (
 			<h1>hi</h1>
 		);

@@ -22,3 +22,7 @@ export function LinkedIn(props) {
 		</svg>
 	);
 }
+
+Github.propTypes = {
+
+}
