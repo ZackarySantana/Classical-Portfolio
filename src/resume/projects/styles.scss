@@ -56,6 +56,27 @@
 			filter: blur(40%);
 		}
 
+
+		&:before,
+		&:after {
+			background: linear-gradient(125deg, rgba(142, 142, 142, 1) 0%, rgba(1, 6, 21, 1) 50%, rgba(130, 130, 130, 1) 100%);
+		}
+
+		&:hover:before,
+		&:hover:after {
+			background: linear-gradient(125deg, rgba(20, 74, 0, 1) 0%, rgba(0, 34, 41, 0) 50%, rgba(7, 0, 120, 1) 100%);
+		}
+
+		&:nth-child(2):before,
+		&:nth-child(2):after {
+			background: linear-gradient(235deg, rgba(142, 142, 142, 1) 0%, rgba(1, 6, 21, 1) 50%, rgba(130, 130, 130, 1) 100%);
+		}
+
+		&:nth-child(2):hover:before,
+		&:nth-child(2):hover:after {
+			background: linear-gradient(235deg, rgba(148, 0, 55, 1) 0%, rgba(1, 6, 21, 1) 50%, rgba(123, 125, 0, 1) 100%);
+		}
+
 		.card-img-container {
 			position: absolute;
 			top: 0;

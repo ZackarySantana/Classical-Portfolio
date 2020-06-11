@@ -21,6 +21,8 @@ const Section = styled.div`
 `;
 
 const Polygon = styled.div`
+	overflow: visible;
+
 	&.noTitle {
 		padding-top: 20vh;
 	}
@@ -47,6 +49,11 @@ const TitleWrapper = styled.div`
 	@media (min-width: 600px) {
 		padding: 0 10vw 0 10vw;
 	}
+
+	&.long {
+		height: 10vh;
+		align-items: flex-start;
+	}
 `;
 
 const Content = styled.div`
@@ -54,6 +61,10 @@ const Content = styled.div`
 
 	@media (min-width: 600px) {
 		height: 60vh;
+
+		&.long {
+			height: 90vh;
+		}
 	}
 	
 	@media (max-width: 600px) {
@@ -63,12 +74,13 @@ const Content = styled.div`
 
 export default class PageSection extends React.Component {
 
-	constructor(props, title, hideTitle = false) {
+	constructor(props, title, hideTitle = false, long = false) {
 		super(props);
 
 		this.state = {
 			title,
-			hideTitle
+			hideTitle,
+			long
 		}
 	}
 
@@ -81,13 +93,13 @@ export default class PageSection extends React.Component {
 			<Section id={this.state.idPrefix + "-section"}>
 				<Polygon className={!this.state.hideTitle ? "" : "noTitle"}>
 					{!this.state.hideTitle &&
-						<TitleWrapper id={this.state.idPrefix + "-titleWrapper"}>
+						<TitleWrapper id={this.state.idPrefix + "-titleWrapper"} className={!this.state.long ? "" : "long"}>
 							<h1 id={this.state.idPrefix + "-title"}>
 								{this.state.title}
 							</h1>
 						</TitleWrapper>
 					}
-					<Content id={this.state.idPrefix + "-content"}>
+					<Content id={this.state.idPrefix + "-content"} className={!this.state.long ? "" : "long"}>
 						{this.rendering(this.props)}
 					</Content>
 				</Polygon>

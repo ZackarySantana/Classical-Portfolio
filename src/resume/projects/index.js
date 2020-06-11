@@ -15,7 +15,7 @@ const Websites = React.lazy(() => import('../../resources/images/websites'));
 export default class Projects extends Section {
 
 	constructor(props) {
-		super(props, "Projects");
+		super(props, "Projects", false, true);
 	}
 
 	rendering() {
