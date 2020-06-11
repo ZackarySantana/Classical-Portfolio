@@ -2,7 +2,23 @@
 	display: grid;
 	grid-template-columns: 49.95% .1% 49.95%;
 
-	h2 {
-		padding-left: 10%;
+	.column {
+		h2 {
+			padding-left: 10%;
+		}
+
+		ul {
+			list-style: circle;
+			font-size: 1.5rem;
+
+			abbr {
+				font-style: italic;
+			}
+
+			p {
+				padding: 0;
+				margin: 0;
+			}
+		}
 	}
 }
