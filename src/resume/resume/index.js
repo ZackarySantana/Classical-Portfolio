@@ -1,5 +1,5 @@
 // Libraries
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 
 // Styles
 import './styles.scss';

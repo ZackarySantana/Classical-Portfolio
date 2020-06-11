@@ -1,5 +1,5 @@
 // Libraries
-import React, { Fragment, Suspense, Component } from 'react';
+import React, { Suspense, Component } from 'react';
 
 // Styles
 import './styles.scss';
