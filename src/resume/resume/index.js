@@ -1,8 +1,12 @@
 // Libraries
-import React from 'react';
+import React, { Fragment } from 'react';
+
+// Styles
+import './styles.scss';
 
 // Components
 import Section from '../components/page-section';
+import Column from './column';
 
 export default class Resume extends Section {
 
@@ -16,7 +20,16 @@ export default class Resume extends Section {
 
 	rendering(props) {
 		return (
-			<h1>hi</h1>
+			<Fragment>
+				<Column title="Education">
+				</Column>
+				<hr />
+				<Column title="Skills">
+					<li>
+
+					</li>
+				</Column>
+			</Fragment>
 		);
 	}
 }

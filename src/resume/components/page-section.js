@@ -21,11 +21,6 @@ const Section = styled.div`
 `;
 
 const Polygon = styled.div`
-	& h1 {
-		height: fit-content;
-		font-size: 4rem;
-	}
-
 	&.noTitle {
 		padding-top: 20vh;
 	}
