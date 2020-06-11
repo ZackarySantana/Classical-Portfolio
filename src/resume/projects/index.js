@@ -1,5 +1,5 @@
 // Libraries
-import React, { Fragment, Suspense } from 'react';
+import React, { Fragment, Suspense, Component } from 'react';
 
 // Styles
 import './styles.scss';
@@ -12,15 +12,11 @@ import ProjectCard from './project-card';
 const Games = React.lazy(() => import('../../resources/images/games'));
 const Websites = React.lazy(() => import('../../resources/images/websites'));
 
-export default class Projects extends Section {
+export default class Projects extends Component {
 
-	constructor(props) {
-		super(props, "Projects", false, true);
-	}
-
-	rendering() {
+	render() {
 		return (
-			<Fragment>
+			<Section title="Projects" long={true}>
 				<ProjectCard name="Games">
 					<Suspense fallback={<div>...</div>}>
 						<Games />
@@ -31,7 +27,7 @@ export default class Projects extends Section {
 						<Websites />
 					</Suspense>
 				</ProjectCard>
-			</Fragment>
+			</Section>
 		);
 	}
 }

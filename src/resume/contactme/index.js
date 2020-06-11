@@ -1,18 +1,15 @@
 // Libraries
-import React from 'react';
+import React, { Component } from 'react';
 
 // Components
 import Section from '../components/page-section';
 
-export default class ContactMe extends Section {
+export default class ContactMe extends Component {
 
-	constructor(props) {
-		super(props, "Contact Me");
-	}
-
-	rendering() {
+	render() {
 		return (
-			<h1>hi</h1>
+			<Section title="Contact Me">
+			</Section>
 		);
 	}
 }

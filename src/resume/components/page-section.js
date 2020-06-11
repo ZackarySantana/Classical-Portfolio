@@ -78,9 +78,7 @@ export default class PageSection extends React.Component {
 		super(props);
 
 		this.state = {
-			title,
-			hideTitle,
-			long
+			...props
 		}
 	}
 
@@ -100,7 +98,7 @@ export default class PageSection extends React.Component {
 						</TitleWrapper>
 					}
 					<Content id={this.state.idPrefix + "-content"} className={!this.state.long ? "" : "long"}>
-						{this.rendering(this.props)}
+						{this.props.children}
 					</Content>
 				</Polygon>
 			</Section>

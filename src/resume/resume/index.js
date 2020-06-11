@@ -1,5 +1,5 @@
 // Libraries
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 
 // Styles
 import './styles.scss';
@@ -8,19 +8,11 @@ import './styles.scss';
 import Section from '../components/page-section';
 import Column, { ColumnItem } from './column';
 
-export default class Resume extends Section {
+export default class Resume extends Component {
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			title: "Resume"
-		};
-	}
-
-	rendering() {
+	render() {
 		return (
-			<Fragment>
+			<Section title="Resume">
 				<Column title="Education" description="(Miami, FL)">
 					<ColumnItem item={<p><abbr title="Florida International University">FIU</abbr> - BS in Computer Science</p>}
 						subItems={[
@@ -79,7 +71,7 @@ export default class Resume extends Section {
 						]
 						} />
 				</Column>
-			</Fragment>
+			</Section>
 		);
 	}
 }

@@ -1,5 +1,5 @@
 // Libraries
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 
 // Styles
 import './styles.scss';
@@ -9,15 +9,11 @@ import Section from '../components/page-section';
 import * as Links from '../components/links';
 import { Github, LinkedIn } from '../components/icons';
 
-export default class Introduction extends Section {
+export default class Introduction extends Component {
 
-	constructor(props) {
-		super(props, "Introduction", true);
-	}
-
-	rendering() {
+	render() {
 		return (
-			<Fragment>
+			<Section title="Introduction" hideTitle={true}>
 				<h1>Hello, I'm Zackary Santana</h1>
 				<ul>
 					<li><button onClick={Links.scrollToResume}>Resume</button></li>
@@ -26,7 +22,7 @@ export default class Introduction extends Section {
 					<li><Github onClick={Links.openGithub} type="button" /></li>
 					<li><LinkedIn onClick={Links.openLinkedIn} type="button" /></li>
 				</ul>
-			</Fragment>
+			</Section>
 		);
 	}
 }
