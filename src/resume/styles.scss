@@ -45,7 +45,7 @@
 		border: none;
 	}
 
-	svg {
+	svg[type="button"] {
 		width: 3.33vw;
 		height: 3.33vw;
 
@@ -56,7 +56,7 @@
 	}
 
 	button,
-	svg {
+	svg[type="button"] {
 		color: var(--inactive);
 		background-color: inherit;
 		border-radius: 15px;

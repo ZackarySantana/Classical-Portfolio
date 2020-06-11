@@ -33,8 +33,8 @@ export default function SideNav() {
 				<li><p className={"link" + (active === 2 ? " active" : "")} onClick={Links.scrollToProjects}>Projects</p></li>
 				<li><p className={"link" + (active === 3 ? " active" : "")} onClick={Links.scrollToContactMe}>Contact Me</p></li>
 				<li id="icons">
-					<Github onClick={Links.openGithub} />
-					<LinkedIn onClick={Links.openLinkedIn} />
+					<Github onClick={Links.openGithub} type="button" />
+					<LinkedIn onClick={Links.openLinkedIn} type="button" />
 				</li>
 			</ul>
 		</div>
