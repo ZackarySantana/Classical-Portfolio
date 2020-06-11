@@ -21,13 +21,13 @@ export default class Projects extends Section {
 	rendering() {
 		return (
 			<Fragment>
-				<ProjectCard>
-					<Suspense fallback={<div>Loading...</div>}>
+				<ProjectCard name="Games">
+					<Suspense fallback={<div>...</div>}>
 						<Games />
 					</Suspense>
 				</ProjectCard>
-				<ProjectCard>
-					<Suspense fallback={<div>Loading...</div>}>
+				<ProjectCard name="Websites">
+					<Suspense fallback={<div>...</div>}>
 						<Websites />
 					</Suspense>
 				</ProjectCard>
