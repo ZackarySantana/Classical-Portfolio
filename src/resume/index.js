@@ -9,7 +9,6 @@ import './styles.scss';
 import Introduction from './introduction';
 import Resume from './resume';
 import Projects from './projects';
-import ContactMe from './contactme';
 import SideNav from './sidenav';
 
 const Background = styled.div`
@@ -27,7 +26,6 @@ export default function resume() {
 				<Introduction />
 				<Resume />
 				<Projects />
-				<ContactMe />
 			</Shadow>
 			<SideNav />
 		</Background>

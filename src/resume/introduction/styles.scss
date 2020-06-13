@@ -5,7 +5,7 @@
 	justify-content: center;
 
 	ul {
-		width: 100%;
+		width: 75%;
 		height: auto;
 		padding: 0;
 
@@ -16,11 +16,16 @@
 		list-style: none;
 
 		li {
-			flex-basis: 33.333333%;
+			flex-basis: 50%;
 			display: flex;
 			justify-content: center;
 
 			padding-bottom: 4vh;
+
+			&.icon-buttons {
+				display: flex;
+				justify-content: space-evenly;
+			}
 		}
 	}
 }

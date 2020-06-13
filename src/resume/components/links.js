@@ -13,15 +13,14 @@ export const scrollToProjects = () => {
 	if (element) element.scrollIntoView();
 }
 
-export const scrollToContactMe = () => {
-	let element = document.getElementById("contact-me-section");
-	if (element) element.scrollIntoView();
-}
-
 export const openGithub = () => {
 	window.open("https://github.com/ZackarySantana/", "_blank");
 }
 
 export const openLinkedIn = () => {
 	window.open("https://www.linkedin.com/in/zackary-santana-47a01b1a6", "_blank");
+}
+
+export const openEmail = () => {
+	window.location.href = `mailto:zackzackyack@gmail.com`;
 }

@@ -6,7 +6,7 @@ import './styles.scss';
 
 // Components
 import * as Links from '../components/links';
-import { Github, LinkedIn } from '../components/icons';
+import { Github, LinkedIn, Email } from '../components/icons';
 
 export default function SideNav() {
 	const [active, setActive] = useState(0);
@@ -31,10 +31,10 @@ export default function SideNav() {
 				<li><p className={"link" + (active === 0 ? " active" : "")} onClick={Links.scrollToHome}>Home</p></li>
 				<li><p className={"link" + (active === 1 ? " active" : "")} onClick={Links.scrollToResume}>Resume</p></li>
 				<li><p className={"link" + (active === 2 ? " active" : "")} onClick={Links.scrollToProjects}>Projects</p></li>
-				<li><p className={"link" + (active === 3 ? " active" : "")} onClick={Links.scrollToContactMe}>Contact Me</p></li>
 				<li id="icons">
 					<Github onClick={Links.openGithub} type="button" />
 					<LinkedIn onClick={Links.openLinkedIn} type="button" />
+					<Email onClick={Links.openEmail} type="button" />
 				</li>
 			</ul>
 		</div>
