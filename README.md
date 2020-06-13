@@ -3,7 +3,14 @@ Resume is my personal portfolio hosted on <a href="https://www.zackaryjamessanta
 It also hosts different games and navigates to different websites I have designed and developed.
 
 ## Games
-The games in this <a href="https://github.com/ZackarySantana/PortfolioGames">repo</a> are designed in to this repo, intended use in the src folder.
+The following games are made to be built in this repo:
+<ul>
+<li>- [<a href="https://github.com/ZackarySantana/TileGame">Tile Game</a>] - NA</li>
+<li>- [<a href="https://github.com/ZackarySantana/AnimalCollector">Animal Collector</a>] - NA</li>
+<li>- [<a href="https://github.com/ZackarySantana/RPG">RPG</a>] - NA</li>
+<li>- [<a href="https://github.com/ZackarySantana/Kamryn2048">Kamryn2048</a>] - NA</li>
+</ul>
+intended use in the src folder.
 
 ## Motivation
 I'm really motivated to design and create applications/websites. I love learning new thinks and I pick on stuff fast. I would love for a company to view my repositories and contact me.
@@ -27,6 +34,7 @@ I'm really motivated to design and create applications/websites. I love learning
 <li>- [<a href="https://www.npmjs.com/package/prop-types">PropTypes</a>] - Used to document expected props for components</li>
 <li>- [<a href="https://www.npmjs.com/package/sass">SASS</a>] - Used for its nesting and better look</li>
 <li>- [<a href="https://styled-components.com/">Styled Components & Babel Plugin Styled Components</a>] - Used for lower file sizes and easier to read styles</li>
+<li>- [<a href="https://reactcommunity.org/react-transition-group/">React Transition Group</a>] - Used for animations and transitions</li>
 </ul>
 
 ## Note
