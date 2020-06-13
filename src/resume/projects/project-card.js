@@ -1,5 +1,6 @@
 // Libraries
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ProjectCard(props) {
 	return (
@@ -12,6 +13,12 @@ function ProjectCard(props) {
 			</div>
 		</div>
 	);
+}
+
+
+ProjectCard.propTypes = {
+	name: PropTypes.string.isRequired,
+	onClick: PropTypes.func
 }
 
 export default ProjectCard;

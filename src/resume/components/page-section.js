@@ -1,5 +1,6 @@
 // Libraries
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.div`
@@ -74,7 +75,13 @@ const Content = styled.div`
 
 export default class PageSection extends React.Component {
 
-	constructor(props, title, hideTitle = false, long = false) {
+	static propTypes = {
+		title: PropTypes.string.isRequired,
+		hideTitle: PropTypes.bool,
+		long: PropTypes.bool
+	}
+
+	constructor(props) {
 		super(props);
 
 		this.state = {

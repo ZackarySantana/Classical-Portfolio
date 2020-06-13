@@ -71,7 +71,7 @@ export default class Resume extends Component {
 						]
 						} />
 				</Column>
-			</Section>
+			</Section >
 		);
 	}
 }

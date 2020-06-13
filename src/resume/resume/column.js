@@ -1,7 +1,8 @@
 // Libraries
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function column(props) {
+export default function Column(props) {
 	return (
 		<div className="column">
 			<h2>{props.title}
@@ -16,6 +17,11 @@ export default function column(props) {
 	);
 }
 
+Column.propTypes = {
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string
+}
+
 export function ColumnItem(props) {
 	return (
 		<li>
@@ -27,4 +33,9 @@ export function ColumnItem(props) {
 			</ul>}
 		</li>
 	);
+}
+
+ColumnItem.propTypes = {
+	item: PropTypes.string.isRequired,
+	subItems: PropTypes.array
 }
