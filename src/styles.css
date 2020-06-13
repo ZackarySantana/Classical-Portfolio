@@ -27,3 +27,29 @@ body {
 h1 {
 	font-family: 'Lexend Tera', sans-serif;
 }
+
+/* Styles for transitioning routes */
+section.route-section {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+	transition: opacity 500ms;
+}
+
+.fade-exit {
+	opacity: 1;
+}
+
+.fade-exit-active {
+	opacity: 0;
+	transition: opacity 500ms;
+}

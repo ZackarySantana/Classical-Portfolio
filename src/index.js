@@ -1,37 +1,67 @@
 // Libraries
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 // Service Worker
 import * as serviceWorker from './serviceWorker';
 
-// Routes
+// Main Route
 import Resume from './resume';
-import TileGame from './games/tilegame';
-import AnimalCollector from './games/animalcollector';
 
 // Default Styles
 import './styles.css';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-function Handler() {
+class GameRoute extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			...props
+		}
+	}
+
+	render() {
+		try {
+			return (
+				<Route
+					path={"/" + this.state.name}
+					component={require("./games/" + this.state.name + "/index.js").default}
+				/>
+			);
+		} catch (e) {
+			console.log("Game: " + this.state.name + " could not be found");
+		}
+		return <Fragment></Fragment>;
+	}
+}
+
+function Handler({ location }) {
 	return (
-		<Switch>
-			<Route path="/" exact component={Resume} />
-			<Route path="/tilegame" exact component={TileGame} />
-			<Route path="/animalcollector" exact component={AnimalCollector} />
-			<Route component={Resume} />
-		</Switch>
+		<TransitionGroup className="transition-group">
+			<CSSTransition
+				key={location.key}
+				timeout={{ enter: 500, exit: 500 }}
+				classNames="fade">
+				<section className="route-section">
+					<Switch location={location}>
+						<Route path="/" exact component={Resume} />
+						<GameRoute name="tilegame" />
+						<GameRoute name="animalcollector" />
+						<Route component={Resume} />
+					</Switch>
+				</section>
+			</CSSTransition>
+		</TransitionGroup>
 	);
 }
 
-function Test() {
-	return <h1>Test</h1>
-}
+const HandlerWithRouter = withRouter(Handler);
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Handler />
+			<HandlerWithRouter />
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root')
