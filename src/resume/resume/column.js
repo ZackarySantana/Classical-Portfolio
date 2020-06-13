@@ -36,6 +36,6 @@ export function ColumnItem(props) {
 }
 
 ColumnItem.propTypes = {
-	item: PropTypes.string.isRequired,
+	item: PropTypes.any.isRequired,
 	subItems: PropTypes.array
 }
