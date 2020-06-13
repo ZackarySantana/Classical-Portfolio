@@ -15,7 +15,6 @@ function ProjectCard(props) {
 	);
 }
 
-
 ProjectCard.propTypes = {
 	name: PropTypes.string.isRequired,
 	onClick: PropTypes.func
