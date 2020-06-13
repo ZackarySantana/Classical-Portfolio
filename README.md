@@ -38,7 +38,7 @@ I'm really motivated to design and create applications/websites. I love learning
 </ul>
 
 ## Note
-This repository is made to compile with each game in the repo <a href="https://github.com/ZackarySantana/PortfolioGames">Portfolio Games</a>.
+This repository is made to compile with each game in the games tag.
 
 ## Installation
 Use CRA (create-react-app) to build the node_modules. Then install this repo (as the root directory, so the src and public folder have the same parent as node_modules).<br>Add each dependance (see Frameworks)<br>Finally, add the <a href="https://github.com/ZackarySantana/PortfolioGames">repo</a> in to the src/ folder
