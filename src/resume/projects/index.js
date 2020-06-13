@@ -9,8 +9,8 @@ import Section from '../components/page-section';
 import ProjectCard from './project-card';
 
 // Icons
-const Games = React.lazy(() => import('../../resources/images/games'));
-const Websites = React.lazy(() => import('../../resources/images/websites'));
+const Games = React.lazy(() => import('../components/games'));
+const Websites = React.lazy(() => import('../components/websites'));
 
 export default class Projects extends Component {
 
