@@ -18,27 +18,38 @@ export default class Projects extends Component {
 
 	constructor() {
 		super();
-		this.state = { show: "" };
-		this.mounted = false;
+
+		this.state = {
+			show: ""
+		};
+
+		this.gamesProfile = React.createRef();
+		this.websitesProfile = React.createRef();
 	}
 
 	render() {
 		return (
 			<Section title="Projects" long={true}>
-				<ProjectCard name="Games" onClick={() => this.setState({ show: "games" })}>
+				<ProjectCard name="Games" onClick={() => {
+					this.websitesProfile.current.hide();
+					this.gamesProfile.current.show();
+				}}>
 					<Suspense fallback={<div>...</div>}>
 						<Games />
 					</Suspense>
 				</ProjectCard>
-				<ProjectCard name="Websites" onClick={() => this.setState({ show: "websites" })}>
+				<ProjectCard name="Websites" onClick={() => {
+					this.gamesProfile.current.hide();
+					this.websitesProfile.current.show();
+				}}>
 					<Suspense fallback={<div>...</div>}>
 						<Websites />
 					</Suspense>
 				</ProjectCard>
 
-				<GamesProfile show={this.state.show === "games"} />
-				<WebsitesProfile show={this.state.show === "websites"} />
-			</Section>
+				<GamesProfile ref={this.gamesProfile} />
+				<WebsitesProfile ref={this.websitesProfile} />
+			</Section >
 		);
 	}
 }

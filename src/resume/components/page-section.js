@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.div`
+	position: relative;
+
 	height: 100vh;
     scroll-snap-align: start;
 
