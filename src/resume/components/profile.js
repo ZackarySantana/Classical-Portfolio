@@ -25,6 +25,7 @@ const Container = styled.div`
 	transition: width 1s;
 	
 	overflow: hidden;
+	background-color: rgba(0, 0, 0, .4);
 	filter: drop-shadow(0 0 10px black);
 
 	&.hide {
@@ -125,14 +126,22 @@ function Item(props) {
 			<Fragment>
 				<h2>{name}</h2>
 				<Buttons>
-					<LinkButton to="/games/play/tilegame">
-						Play
-					</LinkButton>
-					<button to="/">
+					{pathToOpen &&
+						<LinkButton to={pathToOpen}>
+							{props.callToAction}
+						</LinkButton>
+					}
+
+					{linkToOpen &&
+						<button onClick={() => window.open(linkToOpen, "_blank")}>
+							{props.callToAction}
+						</button>
+					}
+					<button onClick={() => window.open(source, "_blank")}>
 						View Source
 					</button>
 				</Buttons>
-			</Fragment>
+			</Fragment >
 		);
 	}
 }
@@ -143,6 +152,7 @@ export default class Profile extends Component {
 		name: PropTypes.string.isRequired,
 		items: PropTypes.arrayOf(PropTypes.shape({
 			name: PropTypes.string.isRequired,
+			callToAction: PropTypes.string.isRequired,
 			pathToOpen: PropTypes.string,
 			linkToOpen: PropTypes.string,
 			source: PropTypes.string.isRequired
@@ -198,14 +208,14 @@ export default class Profile extends Component {
 					</Header>
 					<Page> {/* PAGE CONTAINER */}
 						<div> {/* ITEM 1 */}
-							<Item item={this.state.items[this.state.page * 3]} />
+							<Item item={this.state.items[this.state.page * 3]} callToAction={this.state.callToAction} />
 						</div>
 						<div> {/* ITEM 2 */}
 							{console.log(this.state.items)}
-							<Item item={this.state.items[this.state.page * 3 + 1]} />
+							<Item item={this.state.items[this.state.page * 3 + 1]} callToAction={this.state.callToAction} />
 						</div>
 						<div> {/* ITEM 3 */}
-							<Item item={this.state.items[this.state.page * 3 + 2]} />
+							<Item item={this.state.items[this.state.page * 3 + 2]} callToAction={this.state.callToAction} />
 						</div>
 						<div> {/* PAGE SELECTOR */}
 
