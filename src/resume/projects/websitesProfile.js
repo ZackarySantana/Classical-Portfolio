@@ -11,6 +11,16 @@ export default React.forwardRef((props, ref) => (
 		ref={ref}
 		items={
 			[
+				{
+					name: "This Website",
+					linkToOpen: "https://zackaryjamessantana.com/",
+					source: "https://github.com/ZackarySantana/Resume/"
+				},
+				{
+					name: "SNL Systems",
+					linkToOpen: "https://snlsystems.net/",
+					source: "https://github.com/ZackarySantana/SNLSystems/"
+				}
 			]
 		} />
 ));

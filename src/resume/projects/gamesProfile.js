@@ -20,6 +20,18 @@ export default React.forwardRef((props, ref) => (
 					name: "Animal Collector",
 					pathToOpen: "animalcollector",
 					source: "https://github.com/ZackarySantana/AnimalCollector/"
+				},
+				{
+					name: "RPG",
+					pathToOpen: "rpg",
+					source: "https://github.com/ZackarySantana/RPG/",
+					tba: true
+				},
+				{
+					name: "Kamryn2048",
+					pathToOpen: "kamryn2048",
+					source: "https://github.com/ZackarySantana/Kamryn2048/",
+					tba: true
 				}
 			]
 		} />

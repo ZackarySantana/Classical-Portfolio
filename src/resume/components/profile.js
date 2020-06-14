@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 
 // Components
 import LinkButton from './LinkButton';
+import { CloseBTN } from './icons';
 
 const Container = styled.div`
 	position: fixed;
@@ -35,6 +36,12 @@ const Container = styled.div`
 	h1 {
 		padding: 10px;
 		margin: 0;
+	}
+
+	
+	Button {
+		margin: 2px;
+		border-radius: 0 !important;
 	}
 `;
 
@@ -67,10 +74,20 @@ const Shadow = styled.div`
 const Header = styled.div`
 	width: fit-content;
 	height: fit-content;
-	background-color: var(--background);filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, .5));
+
+	display: flex;
+	flex-flow: row nowrap;
+
+	background-color: var(--background);
 
 	> h1 {
 		padding: 20px;
+	}
+
+	svg {
+		width: 100px;
+		height: auto;
+		cursor: pointer;
 	}
 `;
 
@@ -112,6 +129,7 @@ const Page = styled.div`
 		display: flex;
 		align-items: center;
 		text-align: center;
+		justify-content: space-evenly;
 	}
 `;
 
@@ -123,38 +141,40 @@ const Buttons = styled.div`
 	flex-flow: column nowrap;
 	align-items: stretch;
 	justify-content: space-evenly;
-	
-	> Button {
-		margin: 2px;
-		border-radius: 0 !important;
-	}
 `;
 
 function Item(props) {
 	if (!props.item || !(props.item.name)) {
 		return (
-			<h1>NA</h1>
+			<Fragment />
 		);
 	} else {
-		const { name, pathToOpen, linkToOpen, source } = props.item;
+		const { name, pathToOpen, linkToOpen, source, tba } = props.item;
 		return (
 			<Fragment>
 				<h2>{name}</h2>
 				<Buttons>
-					{pathToOpen &&
-						<LinkButton to={pathToOpen}>
-							{props.callToAction}
-						</LinkButton>
-					}
+					{!tba &&
+						<Fragment>
+							{pathToOpen &&
+								<LinkButton to={pathToOpen}>
+									{props.callToAction}
+								</LinkButton>
+							}
 
-					{linkToOpen &&
-						<button onClick={() => window.open(linkToOpen, "_blank")}>
-							{props.callToAction}
-						</button>
+							{linkToOpen &&
+								<button onClick={() => window.open(linkToOpen, "_blank")}>
+									{props.callToAction}
+								</button>
+							}
+							<button onClick={() => window.open(source, "_blank")}>
+								View Source
+							</button>
+						</Fragment>
 					}
-					<button onClick={() => window.open(source, "_blank")}>
-						View Source
-					</button>
+					{tba &&
+						<h1>TBA</h1>
+					}
 				</Buttons>
 			</Fragment >
 		);
@@ -170,7 +190,8 @@ export default class Profile extends Component {
 			name: PropTypes.string.isRequired,
 			pathToOpen: PropTypes.string,
 			linkToOpen: PropTypes.string,
-			source: PropTypes.string.isRequired
+			source: PropTypes.string,
+			tba: PropTypes.bool
 		}))
 	}
 
@@ -179,7 +200,8 @@ export default class Profile extends Component {
 
 		this.state = {
 			...props,
-			page: 0
+			page: 1,
+			maxPage: Math.ceil(props.items.length / 3)
 		}
 	}
 
@@ -200,36 +222,43 @@ export default class Profile extends Component {
 				classNames="profile"
 				unmountOnExit>
 				<Container>
-					{console.log(this.state.show)}
 					<Background className="background" onClick={() => this.hide()} />
 					<Shadow>
 						<Header>
 							<h1>
 								{this.state.name}
 							</h1>
-							<div></div> {/* X BUTTON */}
+							<CloseBTN onClick={() => this.hide()} />
 						</Header>
-						<Page> {/* PAGE CONTAINER */}
+						<Page>
 							<div>
 								<Item
-									item={this.state.items[this.state.page * 3]}
+									item={this.state.items[(this.state.page - 1) * 3]}
 									callToAction={this.state.callToAction}
 								/>
 							</div>
 							<div>
 								<Item
-									item={this.state.items[this.state.page * 3 + 1]}
+									item={this.state.items[(this.state.page - 1) * 3 + 1]}
 									callToAction={this.state.callToAction}
 								/>
 							</div>
 							<div>
 								<Item
-									item={this.state.items[this.state.page * 3 + 2]}
+									item={this.state.items[(this.state.page - 1) * 3 + 2]}
 									callToAction={this.state.callToAction}
 								/>
 							</div>
 							<div> {/* PAGE SELECTOR */}
+								<h2>Page: {this.state.page}/{this.state.maxPage}</h2>
 
+								<button disabled={this.state.page === 1} onClick={() => this.setState({ page: this.state.page - 1 })}>
+									Previous Page
+								</button>
+
+								<button disabled={this.state.page >= this.state.maxPage} onClick={() => this.setState({ page: this.state.page + 1 })}>
+									Next Page
+								</button>
 							</div>
 						</Page>
 					</Shadow>
