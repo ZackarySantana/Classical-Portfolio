@@ -83,4 +83,44 @@
 	abbr {
 		font-style: italic;
 	}
+
+	/* Profile Animation */
+	.profile-enter {
+		width: 0;
+
+		.background {
+			opacity: 0;
+		}
+	}
+
+	.profile-enter-active {
+		width: 100vw;
+		transition: width 1s;
+
+		.background {
+			opacity: 1;
+			transition: opacity 2s;
+			transition-delay: 1s;
+		}
+	}
+
+	.profile-exit {
+		width: 100vw;
+
+		.background {
+			opacity: 1;
+		}
+	}
+
+	.profile-exit-active {
+		width: 0;
+		transition: width 1s;
+		transition-delay: .25s;
+
+		.background {
+			opacity: 0;
+			transition: opacity .25s;
+		}
+	}
+
 }

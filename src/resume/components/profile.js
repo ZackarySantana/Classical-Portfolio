@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
 
 // Components
 import LinkButton from './LinkButton';
@@ -25,7 +26,6 @@ const Container = styled.div`
 	transition: width 1s;
 	
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, .4);
 	filter: drop-shadow(0 0 10px black);
 
 	&.hide {
@@ -38,15 +38,40 @@ const Container = styled.div`
 	}
 `;
 
+const Background = styled.div`
+	content: '';
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	
+	z-index: -3;
+	opacity: 1;
+
+	transition: opacity 2s;
+	transition-delay: 1s;
+	background-color: rgba(0, 0, 0, .4);
+	
+	&.hide {
+		opacity: 0;
+	}
+`;
+
 const Shadow = styled.div`
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
 	filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, .5));
 `;
 
 const Header = styled.div`
-	margin: auto;
 	width: fit-content;
 	height: fit-content;
 	background-color: var(--background);filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, .5));
+
+	> h1 {
+		padding: 20px;
+	}
 `;
 
 const Page = styled.div`
@@ -71,6 +96,7 @@ const Page = styled.div`
 
 		> h2 {
 			width: 30%;
+			font-size: 2.75rem !important;
 		}
 
 
@@ -103,17 +129,6 @@ const Buttons = styled.div`
 		border-radius: 0 !important;
 	}
 `;
-
-let supportsPassive = false;
-try {
-	window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-		get: function () { return supportsPassive = true; }
-	}));
-} catch (e) { }
-
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
 function Item(props) {
 	if (!props.item || !(props.item.name)) {
@@ -150,9 +165,9 @@ function Item(props) {
 export default class Profile extends Component {
 	static propTypes = {
 		name: PropTypes.string.isRequired,
+		callToAction: PropTypes.string.isRequired,
 		items: PropTypes.arrayOf(PropTypes.shape({
 			name: PropTypes.string.isRequired,
-			callToAction: PropTypes.string.isRequired,
 			pathToOpen: PropTypes.string,
 			linkToOpen: PropTypes.string,
 			source: PropTypes.string.isRequired
@@ -168,61 +183,58 @@ export default class Profile extends Component {
 		}
 	}
 
-	preventDefault(e) {
-		e.preventDefault();
-	}
-
-	preventDefaultForScrollKeys(e) {
-		if (keys[e.keyCode]) {
-			this.preventDefault(e);
-			return false;
-		}
-	}
-
 	show() {
 		this.setState({ show: true });
-		window.addEventListener('DOMMouseScroll', this.preventDefault, false);
-		window.addEventListener(wheelEvent, this.preventDefault, wheelOpt);
-		window.addEventListener('touchmove', this.preventDefault, wheelOpt);
-		window.addEventListener('keydown', this.preventDefaultForScrollKeys, false);
 	}
 
 	hide() {
 		this.setState({ show: false });
-		window.removeEventListener('DOMMouseScroll', this.preventDefault, false);
-		window.removeEventListener(wheelEvent, this.preventDefault, wheelOpt);
-		window.removeEventListener('touchmove', this.preventDefault, wheelOpt);
-		window.removeEventListener('keydown', this.preventDefaultForScrollKeys, false);
 	}
 
 
 	render(props) {
 		return (
-			<Container className={!this.state.show ? "hide" : ""}>
-				<Shadow>
-					<Header> {/* TITLE AND X BUTTON WRAPPER */}
-						<h1>
-							{this.state.name}
-						</h1>
-						<div></div> {/* X BUTTON */}
-					</Header>
-					<Page> {/* PAGE CONTAINER */}
-						<div> {/* ITEM 1 */}
-							<Item item={this.state.items[this.state.page * 3]} callToAction={this.state.callToAction} />
-						</div>
-						<div> {/* ITEM 2 */}
-							{console.log(this.state.items)}
-							<Item item={this.state.items[this.state.page * 3 + 1]} callToAction={this.state.callToAction} />
-						</div>
-						<div> {/* ITEM 3 */}
-							<Item item={this.state.items[this.state.page * 3 + 2]} callToAction={this.state.callToAction} />
-						</div>
-						<div> {/* PAGE SELECTOR */}
+			<CSSTransition
+				in={this.state.show}
+				timeout={3000}
+				classNames="profile"
+				unmountOnExit>
+				<Container>
+					{console.log(this.state.show)}
+					<Background className="background" onClick={() => this.hide()} />
+					<Shadow>
+						<Header>
+							<h1>
+								{this.state.name}
+							</h1>
+							<div></div> {/* X BUTTON */}
+						</Header>
+						<Page> {/* PAGE CONTAINER */}
+							<div>
+								<Item
+									item={this.state.items[this.state.page * 3]}
+									callToAction={this.state.callToAction}
+								/>
+							</div>
+							<div>
+								<Item
+									item={this.state.items[this.state.page * 3 + 1]}
+									callToAction={this.state.callToAction}
+								/>
+							</div>
+							<div>
+								<Item
+									item={this.state.items[this.state.page * 3 + 2]}
+									callToAction={this.state.callToAction}
+								/>
+							</div>
+							<div> {/* PAGE SELECTOR */}
 
-						</div>
-					</Page>
-				</Shadow>
-			</Container>
+							</div>
+						</Page>
+					</Shadow>
+				</Container>
+			</CSSTransition>
 		);
 	}
 }
