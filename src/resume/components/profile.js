@@ -1,7 +1,10 @@
 // Libraries
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+// Components
+import LinkButton from './LinkButton';
 
 const Container = styled.div`
 	position: fixed;
@@ -27,6 +30,11 @@ const Container = styled.div`
 	&.hide {
 		width: 0;
 	}
+
+	h1 {
+		padding: 10px;
+		margin: 0;
+	}
 `;
 
 const Shadow = styled.div`
@@ -38,19 +46,61 @@ const Header = styled.div`
 	width: fit-content;
 	height: fit-content;
 	background-color: var(--background);filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, .5));
-
- 	& > h1 {
-		padding: 10px;
-		margin: 0;
-	}
 `;
 
 const Page = styled.div`
 	width: 80vw;
 	height: 80vh;
 
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: center;
+
 	background-color: var(--background);
 	clip-path: polygon(10% 0%,100% 0%,90% 28%,100% 28%,90% 56%,100% 56%,90% 84%,100% 84%,90% 100%,0% 100%,10% 84%,0% 84%,10% 56%,0% 56%,10% 28%,0% 28%);
+
+	> div:not(:last-of-type) {
+		width: 80%;
+		height: 28%;
+
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-evenly;
+
+		> h2 {
+			width: 30%;
+		}
+
+
+		padding: 0 10% 0 10%;
+	}
+
+	> div:last-of-type {
+		width: 80%;
+		height: 10%;
+
+		padding: 0 10%;
+
+		display: flex;
+		align-items: center;
+		text-align: center;
+	}
+`;
+
+const Buttons = styled.div`
+	height: 100%;
+	padding: 0 20% 0 auto;
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: stretch;
+	justify-content: space-evenly;
+	
+	> Button {
+		margin: 2px;
+		border-radius: 0 !important;
+	}
 `;
 
 let supportsPassive = false;
@@ -63,6 +113,30 @@ try {
 var wheelOpt = supportsPassive ? { passive: false } : false;
 var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
+function Item(props) {
+	if (!props.item || !(props.item.name)) {
+		return (
+			<h1>NA</h1>
+		);
+	} else {
+		const { name, pathToOpen, linkToOpen, source } = props.item;
+		return (
+			<Fragment>
+				<h2>{name}</h2>
+				<Buttons>
+					<LinkButton to="/games/play/tilegame">
+						Play
+					</LinkButton>
+					<button to="/">
+						View Source
+					</button>
+				</Buttons>
+			</Fragment>
+		);
+	}
+}
+
 
 export default class Profile extends Component {
 	static propTypes = {
@@ -80,7 +154,7 @@ export default class Profile extends Component {
 
 		this.state = {
 			...props,
-			page: 1
+			page: 0
 		}
 	}
 
@@ -124,13 +198,14 @@ export default class Profile extends Component {
 					</Header>
 					<Page> {/* PAGE CONTAINER */}
 						<div> {/* ITEM 1 */}
-
+							<Item item={this.state.items[this.state.page * 3]} />
 						</div>
 						<div> {/* ITEM 2 */}
-
+							{console.log(this.state.items)}
+							<Item item={this.state.items[this.state.page * 3 + 1]} />
 						</div>
 						<div> {/* ITEM 3 */}
-
+							<Item item={this.state.items[this.state.page * 3 + 2]} />
 						</div>
 						<div> {/* PAGE SELECTOR */}
 

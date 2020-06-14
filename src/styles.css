@@ -24,10 +24,6 @@ body {
 	margin: 0;
 }
 
-body.stopScrolling {
-	overflow: hidden;
-}
-
 h1 {
 	font-family: 'Lexend Tera', sans-serif;
 }
