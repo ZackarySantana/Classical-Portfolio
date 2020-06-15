@@ -1,0 +1,3 @@
+[submodule "tilegame"]
+	path = src/games/tilegame
+	url = https://github.com/ZackarySantana/TileGame.git
