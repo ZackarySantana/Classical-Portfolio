@@ -1,3 +1,6 @@
-[submodule "tilegame"]
+[submodule "src/games/animalcollector"]
+	path = src/games/animalcollector
+	url = https://github.com/ZackarySantana/AnimalCollector.git
+[submodule "src/games/tilegame"]
 	path = src/games/tilegame
 	url = https://github.com/ZackarySantana/TileGame.git
