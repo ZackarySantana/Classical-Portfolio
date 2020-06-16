@@ -1,5 +1,6 @@
 // Libraries
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './styles.scss';
@@ -7,12 +8,24 @@ import './styles.scss';
 // Components
 import Section from '../components/page-section';
 import Column, { ColumnItem } from './column';
+import { Download } from '../components/icons';
+
+// Files
+import ResumeFile from '../../files/Resume.docx';
 
 export default class Resume extends Component {
 
 	render() {
 		return (
-			<Section title="Resume">
+			<Section title={
+				<Fragment>
+					<h1 className="resume-title">
+						Resume
+						<Link to={ResumeFile} target="_blank" download="Resume.docx">
+							<Download type="button"/>
+						</Link>
+					</h1>
+				</Fragment>} id="resume">
 				<Column title="Education" description="(Miami, FL)">
 					<ColumnItem item={<p><abbr title="Florida International University">FIU</abbr> - BS in Computer Science</p>}
 						subItems={[
