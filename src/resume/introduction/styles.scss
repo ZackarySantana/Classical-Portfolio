@@ -26,6 +26,22 @@
 				display: flex;
 				justify-content: space-evenly;
 			}
+
+			#resume-download-btn {
+				color: var(--inactive);
+				transition: color 1s;
+
+				svg {
+					width: 3.333vw;
+					height: 3.333vw;
+
+					margin-left: 10px;
+				}
+
+				&:hover {
+					color: white;
+				}
+			}
 		}
 	}
 }
