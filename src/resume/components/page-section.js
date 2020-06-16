@@ -57,10 +57,14 @@ const TitleWrapper = styled.div`
 		height: 10vh;
 		align-items: flex-start;
 	}
+
+	h1 {
+		margin: 0;
+	}
 `;
 
 const Content = styled.div`
-	overflow: hidden;
+	overflow: visible;
 
 	@media (min-width: 600px) {
 		height: 60vh;
