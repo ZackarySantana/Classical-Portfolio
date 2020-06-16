@@ -36,9 +36,6 @@ export default class Resume extends Component {
 						]
 						} />
 					<br />
-					<p><b>Notable Courses (taken at FIU):</b></p>
-					<ColumnItem item="PHY2049 - Physics W/ Calculus II (4.0)" />
-					<ColumnItem item="MAC2312 - Calculus II (4.0)" />
 				</Column>
 				<hr />
 
