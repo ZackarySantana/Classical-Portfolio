@@ -1,7 +1,8 @@
 // Libraries
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 // Service Worker
 import * as serviceWorker from './serviceWorker';
 
@@ -10,29 +11,14 @@ import Resume from './resume';
 
 // Default Styles
 import './styles.css';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-class GameRoute extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			...props
-		}
-	}
-
-	render() {
-		try {
-			return (
-				<Route
-					path={"/" + this.state.name}
-					component={require("./games/" + this.state.name + "/index.js").default}
-				/>
-			);
-		} catch (e) {
-			console.log("Game: " + this.state.name + " could not be found");
-		}
-		return <Fragment></Fragment>;
+function Game(name) {
+	try {
+		let data = require("./games/" + name + "/index.js");
+		return data.default;
+	} catch (e) {
+		console.log(name + ": Could not find");
+		return () => <h1>Could not find {name}</h1>
 	}
 }
 
@@ -46,8 +32,18 @@ function Handler({ location }) {
 				<section className="route-section">
 					<Switch location={location}>
 						<Route path="/" exact component={Resume} />
-						<GameRoute name="tilegame" />
-						<GameRoute name="animalcollector" />
+						<Route
+							path={"/tilegame"}
+							component={Game("tilegame")}
+						/>
+						<Route
+							path={"/animalcollector"}
+							component={Game("animalcollector")}
+						/>
+						<Route
+							path={"/rpg"}
+							component={Game("rpg")}
+						/>
 						<Route component={Resume} />
 					</Switch>
 				</section>
