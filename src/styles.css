@@ -1,5 +1,6 @@
 html {
 	font-family: 'Ubuntu', sans-serif;
+	overflow-x: hidden;
 
 	scroll-snap-type: y proximity;
 	scroll-behavior: smooth;
