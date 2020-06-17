@@ -19,7 +19,7 @@ export default class Introduction extends Component {
 	render() {
 		return (
 			<Section title="Introduction" hideTitle={true}>
-				<h1>Hello, I'm Zackary Santana</h1>
+				<h1>Hello,<br />I'm Zackary Santana</h1>
 				<ul>
 					<li>
 						<button onClick={Links.scrollToResume}>Resume</button>
