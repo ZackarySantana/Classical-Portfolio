@@ -24,8 +24,7 @@ export default React.forwardRef((props, ref) => (
 				{
 					name: "RPG",
 					pathToOpen: "rpg",
-					source: "https://github.com/ZackarySantana/RPG/",
-					tba: true
+					source: "https://github.com/ZackarySantana/RPG/"
 				},
 				{
 					name: "Kamryn2048",
