@@ -57,10 +57,14 @@ const TitleWrapper = styled.div`
 		height: 10vh;
 		align-items: flex-start;
 	}
+
+	h1 {
+		margin: 0;
+	}
 `;
 
 const Content = styled.div`
-	overflow: hidden;
+	overflow: visible;
 
 	@media (min-width: 600px) {
 		height: 60vh;
@@ -78,7 +82,8 @@ const Content = styled.div`
 export default class PageSection extends React.Component {
 
 	static propTypes = {
-		title: PropTypes.string.isRequired,
+		title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+		id: PropTypes.string,
 		hideTitle: PropTypes.bool,
 		long: PropTypes.bool
 	}
@@ -92,7 +97,11 @@ export default class PageSection extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({ idPrefix: this.state.title.replace(/\s+/g, '-').toLowerCase() });
+		if (typeof this.state.title === "string") {
+			this.setState({ idPrefix: this.state.title.replace(/\s+/g, '-').toLowerCase() });
+		} else {
+			this.setState({ idPrefix: this.state.id });
+		}
 	}
 
 	render() {
@@ -101,9 +110,14 @@ export default class PageSection extends React.Component {
 				<Polygon className={!this.state.hideTitle ? "" : "noTitle"}>
 					{!this.state.hideTitle &&
 						<TitleWrapper id={this.state.idPrefix + "-titleWrapper"} className={!this.state.long ? "" : "long"}>
-							<h1 id={this.state.idPrefix + "-title"}>
-								{this.state.title}
-							</h1>
+							{typeof this.state.title === "string" &&
+								<h1 id={this.state.idPrefix + "-title"}>
+									{this.state.title}
+								</h1>
+							}
+							{typeof this.state.title !== "string" &&
+								this.state.title
+							}
 						</TitleWrapper>
 					}
 					<Content id={this.state.idPrefix + "-content"} className={!this.state.long ? "" : "long"}>

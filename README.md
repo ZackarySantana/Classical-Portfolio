@@ -5,9 +5,9 @@ It also hosts different games and navigates to different websites I have designe
 ## Games
 The following games are made to be built in this repo:
 <ul>
-<li>- [<a href="https://github.com/ZackarySantana/TileGame">Tile Game</a>] - NA</li>
-<li>- [<a href="https://github.com/ZackarySantana/AnimalCollector">Animal Collector</a>] - NA</li>
-<li>- [<a href="https://github.com/ZackarySantana/RPG">RPG</a>] - NA</li>
+<li>- [<a href="https://github.com/ZackarySantana/TileGame">Tile Game</a>]</li>
+<li>- [<a href="https://github.com/ZackarySantana/AnimalCollector">Animal Collector</a>]</li>
+<li>- [<a href="https://github.com/ZackarySantana/RPG">RPG</a>]</li>
 <li>- [<a href="https://github.com/ZackarySantana/Kamryn2048">Kamryn2048</a>] - NA</li>
 </ul>
 intended use in the src folder.

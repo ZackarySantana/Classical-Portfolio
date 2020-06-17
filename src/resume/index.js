@@ -12,6 +12,7 @@ import Projects from './projects';
 import SideNav from './sidenav';
 import GamesProfile from './projects/gamesProfile';
 import WebsitesProfile from './projects/websitesProfile';
+
 const Background = styled.div`
 	background-color: var(--parent-background);
 `;
@@ -20,7 +21,7 @@ const Shadow = styled.div`
 	filter: drop-shadow(0px 0px var(--shadow-radius) var(--shadow-color));
 `;
 
-export default class Test extends Component {
+export default class Main extends Component {
 
 	constructor() {
 		super();

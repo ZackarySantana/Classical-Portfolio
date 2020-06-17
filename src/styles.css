@@ -1,5 +1,6 @@
 html {
 	font-family: 'Ubuntu', sans-serif;
+	overflow-x: hidden;
 
 	scroll-snap-type: y proximity;
 	scroll-behavior: smooth;
@@ -31,7 +32,8 @@ h1 {
 /* Styles for transitioning routes */
 section.route-section {
 	position: absolute;
-	width: 100%;
+	min-width: 100vw;
+	min-height: 100vh;
 	top: 0;
 	left: 0;
 }

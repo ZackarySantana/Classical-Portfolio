@@ -4,3 +4,6 @@
 [submodule "src/games/tilegame"]
 	path = src/games/tilegame
 	url = https://github.com/ZackarySantana/TileGame.git
+[submodule "src/games/rpg"]
+	path = src/games/rpg
+	url = https://github.com/ZackarySantana/RPG
