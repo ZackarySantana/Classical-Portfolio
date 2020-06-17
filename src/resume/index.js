@@ -12,6 +12,7 @@ import Projects from './projects';
 import SideNav from './sidenav';
 import GamesProfile from './projects/gamesProfile';
 import WebsitesProfile from './projects/websitesProfile';
+
 const Background = styled.div`
 	background-color: var(--parent-background);
 `;
