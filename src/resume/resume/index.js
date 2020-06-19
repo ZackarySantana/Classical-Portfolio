@@ -22,7 +22,7 @@ export default class Resume extends Component {
 					<h1 className="resume-title">
 						Resume
 						<Link to={ResumeFile} target="_blank" download="Resume.docx">
-							<Download type="button"/>
+							<Download type="button" />
 						</Link>
 					</h1>
 				</Fragment>} id="resume">
@@ -31,7 +31,7 @@ export default class Resume extends Component {
 						subItems={[
 							"(2020-present)",
 							"GPA: 3.900/4.0",
-							"15 College Credit Hours"
+							"43 College Credit Hours Collectively"
 						]
 						} />
 					<ColumnItem item={<p><abbr title="Florida International University">FIU</abbr> - Full Time Dual Enrollment</p>}
