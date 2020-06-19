@@ -30,7 +30,7 @@ export default function SideNav() {
 			<ul>
 				<li><p className={"link" + (active === 0 ? " active" : "")} onClick={Links.scrollToHome}>Home</p></li>
 				<li><p className={"link" + (active === 1 ? " active" : "")} onClick={Links.scrollToResume}>Resume</p></li>
-				<li><p className={"link" + (active === 2 ? " active" : "")} onClick={Links.scrollToProjects}>Projects</p></li>
+				<li><p className={"link" + (active === 2 ? " active" : "")} onClick={Links.scrollToProjects}>My Work</p></li>
 				<li id="icons">
 					<Github onClick={Links.openGithub} type="button" />
 					<LinkedIn onClick={Links.openLinkedIn} type="button" />

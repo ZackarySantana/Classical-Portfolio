@@ -97,10 +97,10 @@ export default class PageSection extends React.Component {
 	}
 
 	componentDidMount() {
-		if (typeof this.state.title === "string") {
-			this.setState({ idPrefix: this.state.title.replace(/\s+/g, '-').toLowerCase() });
-		} else {
+		if (typeof this.state.title !== "string" || this.state.id) {
 			this.setState({ idPrefix: this.state.id });
+		} else {
+			this.setState({ idPrefix: this.state.title.replace(/\s+/g, '-').toLowerCase() });
 		}
 	}
 

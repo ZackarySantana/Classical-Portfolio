@@ -23,7 +23,7 @@ export default class Projects extends Component {
 
 	render() {
 		return (
-			<Section title="Projects" long={true}>
+			<Section title="My Work" id="projects" long={true}>
 				<ProjectCard name="Games" onClick={() => {
 					this.gamesProfile.current.show();
 				}}>
