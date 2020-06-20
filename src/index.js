@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { cloneElement, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -12,10 +12,16 @@ import Resume from './resume';
 // Default Styles
 import './styles.css';
 
+// Redux
+import store from './store';
+
 function Game(name) {
 	try {
-		let data = require("./games/" + name + "/index.js");
-		return data.default;
+		let Game = require("./games/" + name + "/index.js").default;
+		return () =>
+			<Fragment>
+				{cloneElement(<Game />, { store })}
+			</Fragment>;
 	} catch (e) {
 		console.log(name + ": Could not find");
 		return () => <h1>Could not find {name}</h1>
