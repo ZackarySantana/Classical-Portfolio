@@ -7,10 +7,8 @@ import './styles.scss';
 // Components
 import Section from '../components/page-section';
 import ProjectCard from './project-card';
-
-// Icons
-const Games = React.lazy(() => import('../components/icons/games'));
-const Websites = React.lazy(() => import('../components/icons/websites'));
+import Games from '../components/icons/games';
+import Websites from '../components/icons/websites';
 
 export default class Projects extends Component {
 
@@ -28,14 +26,14 @@ export default class Projects extends Component {
 					this.gamesProfile.current.show();
 				}}>
 					<Suspense fallback={<div>...</div>}>
-						<Games />
+						{Games}
 					</Suspense>
 				</ProjectCard>
 				<ProjectCard name="Websites" onClick={() => {
 					this.websitesProfile.current.show();
 				}}>
 					<Suspense fallback={<div>...</div>}>
-						<Websites />
+						{Websites}
 					</Suspense>
 				</ProjectCard>
 			</Section>
