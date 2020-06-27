@@ -25,16 +25,12 @@ export default class Projects extends Component {
 				<ProjectCard name="Games" onClick={() => {
 					this.gamesProfile.current.show();
 				}}>
-					<Suspense fallback={<div>...</div>}>
-						{Games}
-					</Suspense>
+					{Games}
 				</ProjectCard>
 				<ProjectCard name="Websites" onClick={() => {
 					this.websitesProfile.current.show();
 				}}>
-					<Suspense fallback={<div>...</div>}>
-						{Websites}
-					</Suspense>
+					{Websites}
 				</ProjectCard>
 			</Section>
 		);
