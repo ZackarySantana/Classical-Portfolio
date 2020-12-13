@@ -12,12 +12,12 @@ const Section = styled.div`
 	background-color: var(--background);
 	color: var(--on-background);
 
-	@media (min-width: 600px) {
+	@media (min-width: 1000px) {
 		-webkit-clip-path: polygon(20% 20%, 30% 0%, 70% 0%, 80% 20%, 80% 80%, 70% 100%, 30% 100%, 20% 80%);
 		clip-path: polygon(20% 20%, 30% 0%, 70% 0%, 80% 20%, 80% 80%, 70% 100%, 30% 100%, 20% 80%);
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		-webkit-clip-path: polygon(0% 10%, 30% 0%, 70% 0%, 100% 10%, 100% 90%, 70% 100%, 30% 100%, 0% 90%);
 		clip-path: polygon(0% 10%, 30% 0%, 70% 0%, 100% 10%, 100% 90%, 70% 100%, 30% 100%, 0% 90%);
 	}
@@ -30,12 +30,12 @@ const Polygon = styled.div`
 		padding-top: 20vh;
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: 1000px) {
 		padding: 0 20vw 0 20vw;
 		height: 80vh;
 	}
 	
-	@media (max-width: 600px) {
+	@media (max-width: 1000px) {
 		padding: 0;
 		height: 90vh;
 	}
@@ -66,7 +66,7 @@ const TitleWrapper = styled.div`
 const Content = styled.div`
 	overflow: visible;
 
-	@media (min-width: 600px) {
+	@media (min-width: 1000px) {
 		height: 60vh;
 
 		&.long {
