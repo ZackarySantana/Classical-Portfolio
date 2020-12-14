@@ -1,5 +1,5 @@
 // Libraries
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 // Styles
 import './styles.scss';
@@ -7,8 +7,21 @@ import './styles.scss';
 // Components
 import Section from '../components/page-section';
 import ProjectCard from './project-card';
-import Games from '../components/icons/games';
-import Websites from '../components/icons/websites';
+
+const Games = React.lazy(() => import('../components/icons/games'));
+const Websites = React.lazy(() => import('../components/icons/websites'));
+
+class Loader extends Component {
+	render() {
+		return (
+			<div>
+				<h1>
+					Loading....
+				</h1>
+			</div>
+		)
+	}
+}
 
 export default class Projects extends Component {
 
@@ -25,12 +38,16 @@ export default class Projects extends Component {
 				<ProjectCard name="Games" onClick={() => {
 					this.gamesProfile.current.show();
 				}}>
-					{Games}
+					<Suspense fallback={<Loader />}>
+						<Games />
+					</Suspense>
 				</ProjectCard>
 				<ProjectCard name="Websites" onClick={() => {
 					this.websitesProfile.current.show();
 				}}>
-					{Websites}
+					<Suspense fallback={<Loader />}>
+						<Websites />
+					</Suspense>
 				</ProjectCard>
 			</Section>
 		);

@@ -1,7 +1,8 @@
 // Libraries
 import React from "react";
+import { Component } from "react";
 
-export default (
+let svg = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		x="0"
@@ -383,3 +384,9 @@ export default (
 		</g>
 	</svg>
 );
+
+export default class Games extends Component {
+	render() {
+		return svg;
+	}
+}

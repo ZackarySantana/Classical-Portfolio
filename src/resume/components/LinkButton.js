@@ -11,7 +11,7 @@ const LinkButton = (props) => {
 		staticContext,
 		to,
 		onClick,
-		// ⬆ filtering out props that `button` doesn’t know what to do with.
+		// ⬆ filtering out props `that `button` doesn’t know what to do with.
 		...rest
 	} = props
 	return (

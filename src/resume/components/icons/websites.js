@@ -1,7 +1,8 @@
 // Libraries
 import React from "react";
+import { Component } from "react";
 
-export default (
+let svg = (
 	<svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 30 30">
 		<defs>
 			<linearGradient
@@ -61,3 +62,9 @@ export default (
 		</g>
 	</svg>
 );
+
+export default class Websites extends Component {
+	render() {
+		return svg;
+	}
+}
