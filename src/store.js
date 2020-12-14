@@ -1,9 +1,10 @@
 // Libraries
-import { createStore } from 'redux';
+import { createStore } from "redux";
 
 const store = createStore(
-	function () { },
+	function () {},
 	{},
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default store;

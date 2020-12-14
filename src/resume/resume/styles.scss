@@ -1,10 +1,9 @@
 #resume-page #resume-section {
-
 	.resume-title {
 		display: flex;
 		align-content: center;
 		justify-content: center;
-			
+
 		a {
 			display: flex;
 			align-content: center;
@@ -20,7 +19,7 @@
 
 	#resume-content {
 		display: grid;
-		grid-template-columns: 49.95% .1% 49.95%;
+		grid-template-columns: 49.95% 0.1% 49.95%;
 
 		.column {
 			padding-left: 5%;

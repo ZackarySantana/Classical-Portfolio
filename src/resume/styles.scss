@@ -5,7 +5,7 @@
 	--shadow-color: rgba(0, 0, 0, 0.8);
 	--shadow-radius: 30px;
 
-	--error: #CF6679;
+	--error: #cf6679;
 	--on-background: #eeeeee;
 	--inactive: #555;
 
@@ -38,7 +38,7 @@
 	}
 
 	button {
-		font-size: 30px;
+		font-size: 2vw;
 		padding: 16px 10px 16px 10px;
 
 		outline: none;
@@ -115,12 +115,11 @@
 	.profile-exit-active {
 		width: 0;
 		transition: width 1s;
-		transition-delay: .25s;
+		transition-delay: 0.25s;
 
 		.background {
 			opacity: 0;
-			transition: opacity .25s;
+			transition: opacity 0.25s;
 		}
 	}
-
 }

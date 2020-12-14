@@ -1,5 +1,5 @@
 html {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: "Ubuntu", sans-serif;
 	overflow-x: hidden;
 
 	scroll-snap-type: y proximity;
@@ -14,11 +14,32 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
 	background: #ffffff;
 	border-radius: 30px;
-	box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+	box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+		inset -2px -2px 2px rgba(0, 0, 0, 0.25);
 }
 
 html::-webkit-scrollbar-track {
 	background: #000000;
+}
+
+@media (max-width: 667px) {
+	.transition-group {
+		display: none;
+	}
+
+	.mobile {
+		display: inherit;
+	}
+}
+
+@media (min-width: 667px) {
+	.transition-group {
+		display: inherit;
+	}
+
+	.mobile {
+		display: none;
+	}
 }
 
 body {
@@ -26,7 +47,7 @@ body {
 }
 
 h1 {
-	font-family: 'Lexend Tera', sans-serif;
+	font-family: "Lexend Tera", sans-serif;
 }
 
 /* Styles for transitioning routes */

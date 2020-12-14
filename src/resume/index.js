@@ -1,17 +1,17 @@
 // Libraries
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
 // Style
-import './styles.scss';
+import "./styles.scss";
 
 // Components
-import Introduction from './introduction';
-import Resume from './resume';
-import Projects from './projects';
-import SideNav from './sidenav';
-import GamesProfile from './projects/gamesProfile';
-import WebsitesProfile from './projects/websitesProfile';
+import Introduction from "./introduction";
+import Resume from "./resume";
+import Projects from "./projects";
+import SideNav from "./sidenav";
+import GamesProfile from "./projects/gamesProfile";
+import WebsitesProfile from "./projects/websitesProfile";
 
 const Background = styled.div`
 	background-color: var(--parent-background);
@@ -22,12 +22,11 @@ const Shadow = styled.div`
 `;
 
 export default class Main extends Component {
-
 	constructor() {
 		super();
 
 		this.state = {
-			show: ""
+			show: "",
 		};
 
 		this.gamesProfile = React.createRef();
@@ -44,7 +43,10 @@ export default class Main extends Component {
 				<Shadow>
 					<Introduction />
 					<Resume />
-					<Projects gamesProfile={this.gamesProfile} websitesProfile={this.websitesProfile} />
+					<Projects
+						gamesProfile={this.gamesProfile}
+						websitesProfile={this.websitesProfile}
+					/>
 				</Shadow>
 			</Background>
 		);
